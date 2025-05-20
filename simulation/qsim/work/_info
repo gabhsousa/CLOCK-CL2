@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Victor\Desktop\Clock\simulation\qsim
+vClock
+Z1 !s100 >9>7Ycz;87eTk4U92Xa:X2
+Z2 IUh_G_zMf4b^O^k]Y0iX>a1
+Z3 VKRi:3hS5HQKcFe?H=kDR>2
+Z4 dC:\Users\Victor\Desktop\Clock\simulation\qsim
+Z5 w1744629524
+Z6 8Clock.vo
+Z7 FClock.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Clock.vo|
+Z10 o-work work -O0
+Z11 n@clock
+!i10b 1
+!s85 0
+Z12 !s108 1744629524.743000
+Z13 !s107 Clock.vo|
+!s101 -O0
+vClock_vlg_check_tst
+!i10b 1
+Z14 !s100 JoNiiYnOnWoe<V3ik^C1c0
+Z15 IEbkbNA8zca5>d4JMbMT9K0
+Z16 VR?l]3JB0eP6EzLg6DcfM?0
+R4
+Z17 w1744629523
+Z18 8Clock.vt
+Z19 FClock.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z20 !s108 1744629524.817000
+Z21 !s107 Clock.vt|
+Z22 !s90 -work|work|Clock.vt|
+!s101 -O0
+R10
+Z23 n@clock_vlg_check_tst
+vClock_vlg_sample_tst
+!i10b 1
+Z24 !s100 ZXjd5OhEM:T@DQCeI7EFH2
+Z25 I_Y4>A1VCV_dSY>J:@;mU[2
+Z26 VQPVNlBC[[k@@@dEYXeY5<3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@clock_vlg_sample_tst
+vClock_vlg_vec_tst
+!i10b 1
+!s100 >8YaKg=Do4aIDG`P:k3gm0
+I7lR5Xdd`90L::<GAndE:e1
+Z28 VcZR;L:?N6fm=ak;W3U:ZO0
+R4
+R17
+R18
+R19
+Z29 L0 535
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@clock_vlg_vec_tst

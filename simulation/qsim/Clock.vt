@@ -1,0 +1,594 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/14/2025 08:18:43"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    Clock
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Clock_vlg_sample_tst(
+	clk,
+	rst,
+	sampler_tx
+);
+input  clk;
+input  rst;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or rst)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module Clock_vlg_check_tst (
+	hr_high_bcd,
+	hr_low_bcd,
+	min_high_bcd,
+	min_low_bcd,
+	sec_high_bcd,
+	sec_low_bcd,
+	sampler_rx
+);
+input [1:0] hr_high_bcd;
+input [3:0] hr_low_bcd;
+input [2:0] min_high_bcd;
+input [3:0] min_low_bcd;
+input [2:0] sec_high_bcd;
+input [3:0] sec_low_bcd;
+input sampler_rx;
+
+reg [1:0] hr_high_bcd_expected;
+reg [3:0] hr_low_bcd_expected;
+reg [2:0] min_high_bcd_expected;
+reg [3:0] min_low_bcd_expected;
+reg [2:0] sec_high_bcd_expected;
+reg [3:0] sec_low_bcd_expected;
+
+reg [1:0] hr_high_bcd_prev;
+reg [3:0] hr_low_bcd_prev;
+reg [2:0] min_high_bcd_prev;
+reg [3:0] min_low_bcd_prev;
+reg [2:0] sec_high_bcd_prev;
+reg [3:0] sec_low_bcd_prev;
+
+reg [1:0] hr_high_bcd_expected_prev;
+reg [3:0] hr_low_bcd_expected_prev;
+reg [2:0] min_high_bcd_expected_prev;
+reg [3:0] min_low_bcd_expected_prev;
+reg [2:0] sec_high_bcd_expected_prev;
+reg [3:0] sec_low_bcd_expected_prev;
+
+reg [1:0] last_hr_high_bcd_exp;
+reg [3:0] last_hr_low_bcd_exp;
+reg [2:0] last_min_high_bcd_exp;
+reg [3:0] last_min_low_bcd_exp;
+reg [2:0] last_sec_high_bcd_exp;
+reg [3:0] last_sec_low_bcd_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:6] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 6'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	hr_high_bcd_prev = hr_high_bcd;
+	hr_low_bcd_prev = hr_low_bcd;
+	min_high_bcd_prev = min_high_bcd;
+	min_low_bcd_prev = min_low_bcd;
+	sec_high_bcd_prev = sec_high_bcd;
+	sec_low_bcd_prev = sec_low_bcd;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	hr_high_bcd_expected_prev = hr_high_bcd_expected;
+	hr_low_bcd_expected_prev = hr_low_bcd_expected;
+	min_high_bcd_expected_prev = min_high_bcd_expected;
+	min_low_bcd_expected_prev = min_low_bcd_expected;
+	sec_high_bcd_expected_prev = sec_high_bcd_expected;
+	sec_low_bcd_expected_prev = sec_low_bcd_expected;
+end
+
+
+// expected hr_high_bcd[ 1 ]
+initial
+begin
+	hr_high_bcd_expected[1] = 1'bX;
+end 
+// expected hr_high_bcd[ 0 ]
+initial
+begin
+	hr_high_bcd_expected[0] = 1'bX;
+end 
+// expected hr_low_bcd[ 3 ]
+initial
+begin
+	hr_low_bcd_expected[3] = 1'bX;
+end 
+// expected hr_low_bcd[ 2 ]
+initial
+begin
+	hr_low_bcd_expected[2] = 1'bX;
+end 
+// expected hr_low_bcd[ 1 ]
+initial
+begin
+	hr_low_bcd_expected[1] = 1'bX;
+end 
+// expected hr_low_bcd[ 0 ]
+initial
+begin
+	hr_low_bcd_expected[0] = 1'bX;
+end 
+// expected min_high_bcd[ 2 ]
+initial
+begin
+	min_high_bcd_expected[2] = 1'bX;
+end 
+// expected min_high_bcd[ 1 ]
+initial
+begin
+	min_high_bcd_expected[1] = 1'bX;
+end 
+// expected min_high_bcd[ 0 ]
+initial
+begin
+	min_high_bcd_expected[0] = 1'bX;
+end 
+// expected min_low_bcd[ 3 ]
+initial
+begin
+	min_low_bcd_expected[3] = 1'bX;
+end 
+// expected min_low_bcd[ 2 ]
+initial
+begin
+	min_low_bcd_expected[2] = 1'bX;
+end 
+// expected min_low_bcd[ 1 ]
+initial
+begin
+	min_low_bcd_expected[1] = 1'bX;
+end 
+// expected min_low_bcd[ 0 ]
+initial
+begin
+	min_low_bcd_expected[0] = 1'bX;
+end 
+// expected sec_high_bcd[ 2 ]
+initial
+begin
+	sec_high_bcd_expected[2] = 1'bX;
+end 
+// expected sec_high_bcd[ 1 ]
+initial
+begin
+	sec_high_bcd_expected[1] = 1'bX;
+end 
+// expected sec_high_bcd[ 0 ]
+initial
+begin
+	sec_high_bcd_expected[0] = 1'bX;
+end 
+// expected sec_low_bcd[ 3 ]
+initial
+begin
+	sec_low_bcd_expected[3] = 1'bX;
+end 
+// expected sec_low_bcd[ 2 ]
+initial
+begin
+	sec_low_bcd_expected[2] = 1'bX;
+end 
+// expected sec_low_bcd[ 1 ]
+initial
+begin
+	sec_low_bcd_expected[1] = 1'bX;
+end 
+// expected sec_low_bcd[ 0 ]
+initial
+begin
+	sec_low_bcd_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(hr_high_bcd_expected or hr_high_bcd or hr_low_bcd_expected or hr_low_bcd or min_high_bcd_expected or min_high_bcd or min_low_bcd_expected or min_low_bcd or sec_high_bcd_expected or sec_high_bcd or sec_low_bcd_expected or sec_low_bcd)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected hr_high_bcd = %b | expected hr_low_bcd = %b | expected min_high_bcd = %b | expected min_low_bcd = %b | expected sec_high_bcd = %b | expected sec_low_bcd = %b | ",hr_high_bcd_expected_prev,hr_low_bcd_expected_prev,min_high_bcd_expected_prev,min_low_bcd_expected_prev,sec_high_bcd_expected_prev,sec_low_bcd_expected_prev);
+	$display("| real hr_high_bcd = %b | real hr_low_bcd = %b | real min_high_bcd = %b | real min_low_bcd = %b | real sec_high_bcd = %b | real sec_low_bcd = %b | ",hr_high_bcd_prev,hr_low_bcd_prev,min_high_bcd_prev,min_low_bcd_prev,sec_high_bcd_prev,sec_low_bcd_prev);
+`endif
+	if (
+		( hr_high_bcd_expected_prev[0] !== 1'bx ) && ( hr_high_bcd_prev[0] !== hr_high_bcd_expected_prev[0] )
+		&& ((hr_high_bcd_expected_prev[0] !== last_hr_high_bcd_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_high_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_high_bcd_expected_prev);
+		$display ("     Real value = %b", hr_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_hr_high_bcd_exp[0] = hr_high_bcd_expected_prev[0];
+	end
+	if (
+		( hr_high_bcd_expected_prev[1] !== 1'bx ) && ( hr_high_bcd_prev[1] !== hr_high_bcd_expected_prev[1] )
+		&& ((hr_high_bcd_expected_prev[1] !== last_hr_high_bcd_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_high_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_high_bcd_expected_prev);
+		$display ("     Real value = %b", hr_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_hr_high_bcd_exp[1] = hr_high_bcd_expected_prev[1];
+	end
+	if (
+		( hr_low_bcd_expected_prev[0] !== 1'bx ) && ( hr_low_bcd_prev[0] !== hr_low_bcd_expected_prev[0] )
+		&& ((hr_low_bcd_expected_prev[0] !== last_hr_low_bcd_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_low_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_low_bcd_expected_prev);
+		$display ("     Real value = %b", hr_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_hr_low_bcd_exp[0] = hr_low_bcd_expected_prev[0];
+	end
+	if (
+		( hr_low_bcd_expected_prev[1] !== 1'bx ) && ( hr_low_bcd_prev[1] !== hr_low_bcd_expected_prev[1] )
+		&& ((hr_low_bcd_expected_prev[1] !== last_hr_low_bcd_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_low_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_low_bcd_expected_prev);
+		$display ("     Real value = %b", hr_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_hr_low_bcd_exp[1] = hr_low_bcd_expected_prev[1];
+	end
+	if (
+		( hr_low_bcd_expected_prev[2] !== 1'bx ) && ( hr_low_bcd_prev[2] !== hr_low_bcd_expected_prev[2] )
+		&& ((hr_low_bcd_expected_prev[2] !== last_hr_low_bcd_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_low_bcd[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_low_bcd_expected_prev);
+		$display ("     Real value = %b", hr_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_hr_low_bcd_exp[2] = hr_low_bcd_expected_prev[2];
+	end
+	if (
+		( hr_low_bcd_expected_prev[3] !== 1'bx ) && ( hr_low_bcd_prev[3] !== hr_low_bcd_expected_prev[3] )
+		&& ((hr_low_bcd_expected_prev[3] !== last_hr_low_bcd_exp[3]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port hr_low_bcd[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", hr_low_bcd_expected_prev);
+		$display ("     Real value = %b", hr_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_hr_low_bcd_exp[3] = hr_low_bcd_expected_prev[3];
+	end
+	if (
+		( min_high_bcd_expected_prev[0] !== 1'bx ) && ( min_high_bcd_prev[0] !== min_high_bcd_expected_prev[0] )
+		&& ((min_high_bcd_expected_prev[0] !== last_min_high_bcd_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_high_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_high_bcd_expected_prev);
+		$display ("     Real value = %b", min_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_min_high_bcd_exp[0] = min_high_bcd_expected_prev[0];
+	end
+	if (
+		( min_high_bcd_expected_prev[1] !== 1'bx ) && ( min_high_bcd_prev[1] !== min_high_bcd_expected_prev[1] )
+		&& ((min_high_bcd_expected_prev[1] !== last_min_high_bcd_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_high_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_high_bcd_expected_prev);
+		$display ("     Real value = %b", min_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_min_high_bcd_exp[1] = min_high_bcd_expected_prev[1];
+	end
+	if (
+		( min_high_bcd_expected_prev[2] !== 1'bx ) && ( min_high_bcd_prev[2] !== min_high_bcd_expected_prev[2] )
+		&& ((min_high_bcd_expected_prev[2] !== last_min_high_bcd_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_high_bcd[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_high_bcd_expected_prev);
+		$display ("     Real value = %b", min_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_min_high_bcd_exp[2] = min_high_bcd_expected_prev[2];
+	end
+	if (
+		( min_low_bcd_expected_prev[0] !== 1'bx ) && ( min_low_bcd_prev[0] !== min_low_bcd_expected_prev[0] )
+		&& ((min_low_bcd_expected_prev[0] !== last_min_low_bcd_exp[0]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_low_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_low_bcd_expected_prev);
+		$display ("     Real value = %b", min_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_min_low_bcd_exp[0] = min_low_bcd_expected_prev[0];
+	end
+	if (
+		( min_low_bcd_expected_prev[1] !== 1'bx ) && ( min_low_bcd_prev[1] !== min_low_bcd_expected_prev[1] )
+		&& ((min_low_bcd_expected_prev[1] !== last_min_low_bcd_exp[1]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_low_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_low_bcd_expected_prev);
+		$display ("     Real value = %b", min_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_min_low_bcd_exp[1] = min_low_bcd_expected_prev[1];
+	end
+	if (
+		( min_low_bcd_expected_prev[2] !== 1'bx ) && ( min_low_bcd_prev[2] !== min_low_bcd_expected_prev[2] )
+		&& ((min_low_bcd_expected_prev[2] !== last_min_low_bcd_exp[2]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_low_bcd[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_low_bcd_expected_prev);
+		$display ("     Real value = %b", min_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_min_low_bcd_exp[2] = min_low_bcd_expected_prev[2];
+	end
+	if (
+		( min_low_bcd_expected_prev[3] !== 1'bx ) && ( min_low_bcd_prev[3] !== min_low_bcd_expected_prev[3] )
+		&& ((min_low_bcd_expected_prev[3] !== last_min_low_bcd_exp[3]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port min_low_bcd[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", min_low_bcd_expected_prev);
+		$display ("     Real value = %b", min_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_min_low_bcd_exp[3] = min_low_bcd_expected_prev[3];
+	end
+	if (
+		( sec_high_bcd_expected_prev[0] !== 1'bx ) && ( sec_high_bcd_prev[0] !== sec_high_bcd_expected_prev[0] )
+		&& ((sec_high_bcd_expected_prev[0] !== last_sec_high_bcd_exp[0]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_high_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_high_bcd_expected_prev);
+		$display ("     Real value = %b", sec_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_sec_high_bcd_exp[0] = sec_high_bcd_expected_prev[0];
+	end
+	if (
+		( sec_high_bcd_expected_prev[1] !== 1'bx ) && ( sec_high_bcd_prev[1] !== sec_high_bcd_expected_prev[1] )
+		&& ((sec_high_bcd_expected_prev[1] !== last_sec_high_bcd_exp[1]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_high_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_high_bcd_expected_prev);
+		$display ("     Real value = %b", sec_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_sec_high_bcd_exp[1] = sec_high_bcd_expected_prev[1];
+	end
+	if (
+		( sec_high_bcd_expected_prev[2] !== 1'bx ) && ( sec_high_bcd_prev[2] !== sec_high_bcd_expected_prev[2] )
+		&& ((sec_high_bcd_expected_prev[2] !== last_sec_high_bcd_exp[2]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_high_bcd[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_high_bcd_expected_prev);
+		$display ("     Real value = %b", sec_high_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_sec_high_bcd_exp[2] = sec_high_bcd_expected_prev[2];
+	end
+	if (
+		( sec_low_bcd_expected_prev[0] !== 1'bx ) && ( sec_low_bcd_prev[0] !== sec_low_bcd_expected_prev[0] )
+		&& ((sec_low_bcd_expected_prev[0] !== last_sec_low_bcd_exp[0]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_low_bcd[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_low_bcd_expected_prev);
+		$display ("     Real value = %b", sec_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_sec_low_bcd_exp[0] = sec_low_bcd_expected_prev[0];
+	end
+	if (
+		( sec_low_bcd_expected_prev[1] !== 1'bx ) && ( sec_low_bcd_prev[1] !== sec_low_bcd_expected_prev[1] )
+		&& ((sec_low_bcd_expected_prev[1] !== last_sec_low_bcd_exp[1]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_low_bcd[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_low_bcd_expected_prev);
+		$display ("     Real value = %b", sec_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_sec_low_bcd_exp[1] = sec_low_bcd_expected_prev[1];
+	end
+	if (
+		( sec_low_bcd_expected_prev[2] !== 1'bx ) && ( sec_low_bcd_prev[2] !== sec_low_bcd_expected_prev[2] )
+		&& ((sec_low_bcd_expected_prev[2] !== last_sec_low_bcd_exp[2]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_low_bcd[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_low_bcd_expected_prev);
+		$display ("     Real value = %b", sec_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_sec_low_bcd_exp[2] = sec_low_bcd_expected_prev[2];
+	end
+	if (
+		( sec_low_bcd_expected_prev[3] !== 1'bx ) && ( sec_low_bcd_prev[3] !== sec_low_bcd_expected_prev[3] )
+		&& ((sec_low_bcd_expected_prev[3] !== last_sec_low_bcd_exp[3]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sec_low_bcd[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sec_low_bcd_expected_prev);
+		$display ("     Real value = %b", sec_low_bcd_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_sec_low_bcd_exp[3] = sec_low_bcd_expected_prev[3];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module Clock_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg rst;
+// wires                                               
+wire [1:0] hr_high_bcd;
+wire [3:0] hr_low_bcd;
+wire [2:0] min_high_bcd;
+wire [3:0] min_low_bcd;
+wire [2:0] sec_high_bcd;
+wire [3:0] sec_low_bcd;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+Clock i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.hr_high_bcd(hr_high_bcd),
+	.hr_low_bcd(hr_low_bcd),
+	.min_high_bcd(min_high_bcd),
+	.min_low_bcd(min_low_bcd),
+	.rst(rst),
+	.sec_high_bcd(sec_high_bcd),
+	.sec_low_bcd(sec_low_bcd)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #25000 1'b1;
+	#25000;
+end 
+
+// rst
+initial
+begin
+	rst = 1'b0;
+	rst = #20000 1'b1;
+end 
+
+Clock_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.rst(rst),
+	.sampler_tx(sampler)
+);
+
+Clock_vlg_check_tst tb_out(
+	.hr_high_bcd(hr_high_bcd),
+	.hr_low_bcd(hr_low_bcd),
+	.min_high_bcd(min_high_bcd),
+	.min_low_bcd(min_low_bcd),
+	.sec_high_bcd(sec_high_bcd),
+	.sec_low_bcd(sec_low_bcd),
+	.sampler_rx(sampler)
+);
+endmodule
+

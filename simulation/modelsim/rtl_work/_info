@@ -1,0 +1,125 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Victor\Desktop\Clock\simulation\modelsim
+vClock
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+IZTCM:fJ440B=VTdWUQ08T1
+VKRi:3hS5HQKcFe?H=kDR>2
+S1
+Z2 dC:\Users\Victor\Desktop\Clock\simulation\modelsim
+w1744028256
+8C:/Users/Victor/Desktop/Clock/Clock.sv
+FC:/Users/Victor/Desktop/Clock/Clock.sv
+L0 1
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-sv -work work -O0
+Z5 !s92 -sv -work work +incdir+C:/Users/Victor/Desktop/Clock -O0
+n@clock
+!i10b 1
+!s100 @O7Agd_FS7bzRZVnlm>]71
+!s105 Clock_sv_unit
+!s85 0
+!s108 1744629270.505000
+!s107 C:/Users/Victor/Desktop/Clock/Clock.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Victor/Desktop/Clock|C:/Users/Victor/Desktop/Clock/Clock.sv|
+!s101 -O0
+vClockDivider_1Hz
+R1
+IPh:^[^?<dZT4PMDA]FKF]3
+Vh6n2=BNYIf=1=Ak?6TUTi0
+S1
+R2
+w1742761145
+8C:/Users/Victor/Desktop/Clock/ClockDivider_1Hz.sv
+FC:/Users/Victor/Desktop/Clock/ClockDivider_1Hz.sv
+L0 1
+R3
+r1
+31
+R4
+n@clock@divider_1@hz
+R5
+!i10b 1
+!s100 Yi`5IoTO31hJ^@8aggM9;1
+!s105 ClockDivider_1Hz_sv_unit
+!s85 0
+!s108 1744629270.427000
+!s107 C:/Users/Victor/Desktop/Clock/ClockDivider_1Hz.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Victor/Desktop/Clock|C:/Users/Victor/Desktop/Clock/ClockDivider_1Hz.sv|
+!s101 -O0
+vHourCounter
+R1
+IMn<0kOlA8^WY6K=2kSF<C2
+VcVg1BIIT@n<odWco^E35I1
+S1
+R2
+w1744199960
+8C:/Users/Victor/Desktop/Clock/HourCounter.sv
+FC:/Users/Victor/Desktop/Clock/HourCounter.sv
+L0 1
+R3
+r1
+31
+R4
+R5
+n@hour@counter
+!i10b 1
+!s100 9DSZKgGR]Y^XnSn?:<SSj0
+!s105 HourCounter_sv_unit
+!s85 0
+!s108 1744629270.567000
+!s107 C:/Users/Victor/Desktop/Clock/HourCounter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Victor/Desktop/Clock|C:/Users/Victor/Desktop/Clock/HourCounter.sv|
+!s101 -O0
+vMinuteCounter
+R1
+I>;6:A5d4oS8D5D:h8XQ2E2
+V976=?0SfhUi?Z0OI?IB6S1
+S1
+R2
+w1744027098
+8C:/Users/Victor/Desktop/Clock/MinuteCounter.sv
+FC:/Users/Victor/Desktop/Clock/MinuteCounter.sv
+L0 1
+R3
+r1
+31
+R4
+R5
+n@minute@counter
+!i10b 1
+!s100 ;LZnb10bb:h5LjaQ[G;nk1
+!s105 MinuteCounter_sv_unit
+!s85 0
+!s108 1744629270.614000
+!s107 C:/Users/Victor/Desktop/Clock/MinuteCounter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Victor/Desktop/Clock|C:/Users/Victor/Desktop/Clock/MinuteCounter.sv|
+!s101 -O0
+vSecondCounter
+R1
+!i10b 1
+!s100 0eQaciC`j`9okXjOTD6<V3
+I:;_7f_2onafa`znoBCLCS2
+V^V8jfSP_h3H1cQlZLm@dA0
+!s105 SecondCounter_sv_unit
+S1
+R2
+w1744027099
+8C:/Users/Victor/Desktop/Clock/SecondCounter.sv
+FC:/Users/Victor/Desktop/Clock/SecondCounter.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1744629270.661000
+!s107 C:/Users/Victor/Desktop/Clock/SecondCounter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Victor/Desktop/Clock|C:/Users/Victor/Desktop/Clock/SecondCounter.sv|
+!s101 -O0
+R4
+R5
+n@second@counter

@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Victor\Desktop\Clock\simulation\modelsim
+vClock
+!i10b 1
+!s100 >9>7Ycz;87eTk4U92Xa:X2
+I@b02z7g0STD=Em[:QgGR:1
+VKRi:3hS5HQKcFe?H=kDR>2
+Z1 dC:\Users\Victor\Desktop\Clock\simulation\modelsim
+w1744200670
+8Clock.vo
+FClock.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1744629407.306000
+!s107 Clock.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Clock.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+n@clock
